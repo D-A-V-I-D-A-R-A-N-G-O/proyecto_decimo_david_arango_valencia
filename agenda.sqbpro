@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="agenda.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2317"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="0"/><expanded_item id="2" parent="0"/><expanded_item id="3" parent="0"/><expanded_item id="4" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="EncuestaDificultad" custom_title="0" dock_id="1" table="4,18:mainEncuestaDificultad"/><dock_state state="000000ff00000000fd000000010000000200000514000002aefc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005140000011800ffffff000002580000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">
+CREATE TABLE Usuario (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE
+);
+
+-- Creación de la tabla TipoTarea
+CREATE TABLE TipoTarea (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL
+);
+
+-- Creación de la tabla Materia
+CREATE TABLE Materia (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL
+);
+
+-- Creación de la tabla Tarea
+CREATE TABLE Tarea (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    descripcion TEXT NOT NULL,
+    tipo_tarea_id INTEGER NOT NULL,
+    area_materia_id INTEGER NOT NULL,
+    fecha_entrega TEXT NOT NULL, 
+    nivel_dificultad INTEGER,
+    tiempo_estimado REAL NOT NULL,
+    prioridad REAL,
+    FOREIGN KEY (tipo_tarea_id) REFERENCES TipoTarea(id),
+    FOREIGN KEY (area_materia_id) REFERENCES Materia(id)
+);
+
+-- Creación de la tabla EncuestaDificultad
+CREATE TABLE EncuestaDificultad (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    tarea_id INTEGER NOT NULL,
+    usuario_id INTEGER NOT NULL,
+    nivel_dificultad INTEGER, 
+    FOREIGN KEY (tarea_id) REFERENCES Tarea(id),
+    FOREIGN KEY (usuario_id) REFERENCES Usuario(id)
+);
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
