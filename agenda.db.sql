@@ -1,3 +1,7 @@
+CREATE DATABASE agenda;
+
+USE agenda;
+
 CREATE TABLE "Materia" (
 	"id"	INTEGER,
 	"nombre"	TEXT NOT NULL,
