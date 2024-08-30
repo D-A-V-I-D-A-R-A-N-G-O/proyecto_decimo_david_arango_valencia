@@ -12,7 +12,5 @@
     area_materia_id: el area o la materia al la que pertenese la tarea.(numerico)
     fecha_entrega: cuando tiene que entregar la tarea.(alfanumerico)
     mi_dificultad: la dificultad que se le asigna a la tarea por persona.(numerico)
-    dificultad_por_tipo: segun el tipo de materia cada una de estas tendra una dificultad
-    dificultad_por_materia: segun la materia de 
-    dificultad total: en este campo se pone la dificultad total(promedio de las otras 3), para poder ordenarlo en el ranking. numerico
+    dificultad total: en este campo se pone la dificultad total(promedio de las otras 3), para poder ordenarlo en el ranking. (numerico)
 
