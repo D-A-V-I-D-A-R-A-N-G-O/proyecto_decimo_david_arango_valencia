@@ -13,4 +13,5 @@
     fecha_entrega: cuando tiene que entregar la tarea.(alfanumerico)
     mi_dificultad: la dificultad que se le asigna a la tarea por persona.(numerico)
     dificultad total: en este campo se pone la dificultad total(promedio de las otras 3), para poder ordenarlo en el ranking. (numerico)
-
+##tipotarea
+    
