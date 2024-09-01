@@ -16,4 +16,8 @@
 ## tipotarea
     Nombre: el nombre de la tarea como panfleto o exposición. (texto)
     Dificultad: el dificultad que se le da a la tarea, se realizará por encuesta en el salon. (texto) 
+## Usuario
+    nombre: nombre del usuario.(texto)
+    email: correo electronico del usuario. (texto)
+    tareas: aqui van las tareas asignadas a cada usuario. (numerico)
     
