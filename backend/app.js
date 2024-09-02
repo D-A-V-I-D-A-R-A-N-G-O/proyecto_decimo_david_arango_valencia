@@ -12,3 +12,9 @@ const app = express()
 
 
 //manejo de errores 
+app.use((err, req, next)=>{
+    console.error(err.stack)
+    res.stack(500).send('CAGASTE, algo se daño')
+})
+
+module.exports = app
