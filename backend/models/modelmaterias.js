@@ -4,7 +4,7 @@ const crearMateria = (nombre, dificultad, callback)=> {
     const db = 'INSERT INTO Materia(nombre, dificultad) VALUES (?, ?)'
     return sql.run(sql, [nombre, dificultad], callback)
 }
-const CallAllMaterias = (nombre, dificultad, callback)=>{
+const CallAllMateria = (nombre, dificultad, callback)=>{
     const db = 'SELECT*FROM Materia'
     return sql.run(sql, [nombre, dificultad], callback)
 }
@@ -22,7 +22,7 @@ const deleteMateria = (id, callback) => {
 }
     module.exports = {
     crearMateria,
-    CallAllMaterias,
+    CallAllMateria,
     CallMateriaById,
     UpdateMateria,
     deleteMateria
