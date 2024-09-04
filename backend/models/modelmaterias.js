@@ -12,8 +12,18 @@ const CallMateriaById = (id, callback) => {
     const db = 'SELECT*FROM Materia WHERE Materia.id=?'
     return sql.run(sql, [id], callback)
 }
-module.exports = {
+const UpdateMateria = (nombre, dificultad, id, callback) =>{
+    const db = 'UPDATE Usuario SET nombre = ?, dificultad = ? WHERE id = '
+    return sql.run(sql, [nombre, dificultad, id], callback)
+}
+const deleteMateria = (id, callback) => {
+    const sql = 'DELETE FROM Materia WHERE Usuario.id = ?'
+    return db.run(sql, [id], callback)
+}
+    module.exports = {
     crearMateria,
     CallAllMaterias,
-    CallMateriaById
+    CallMateriaById,
+    UpdateMateria,
+    deleteMateria
 }
